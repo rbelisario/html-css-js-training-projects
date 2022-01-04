@@ -10,7 +10,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   overflow: hidden;
   margin: 0;
 }
@@ -18,9 +17,11 @@ body {
 .container {
   display: flex;
   width: 90vw;
+  height: 100vh;
 }
 
 .panel {
+  background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
   height: 80vh;
@@ -70,12 +71,26 @@ body {
 }
 
 @media (max-width: 480px) {
-  .container {
-    width: 100vw;
+  h1 {
+    text-align: center;
   }
 
-  .panel:nth-of-type(4),
-  .panel:nth-of-type(5) {
-    display: none;
+  body {
+    overflow-y: auto;
+    height: 100vh;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .panel {
+    height: 50px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .panel {
+    background-size: auto 100%;
   }
 }
